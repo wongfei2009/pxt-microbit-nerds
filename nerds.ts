@@ -1,19 +1,3 @@
-enum ButtonAction {
-    //% block=touched block.loc.ja="押された"
-    Touched = 1,        // MICROBIT_BUTTON_EVT_DOWN
-    //% block=released block.loc.ja="離された"
-    Released = 2,       // MICROBIT_BUTTON_EVT_UP
-    //% block=pressed block.loc.ja="クリックされた"
-    Pressed = 3,        // MICROBIT_BUTTON_EVT_CLICK
-    //% block="long pressed" block.loc.ja="長くクリックされた"
-    LongPressed = 4,    // MICROBIT_BUTTON_EVT_LONG_CLICK
-    
-    // // block="hold" block.loc.ja="ホールドされた"
-    // Hold = 5,           // MICROBIT_BUTTON_EVT_HOLD
-    // // block="double pressed" block.loc.ja="ダブル・クリックされた"
-    // DoublePressed　= 6, // MICROBIT_BUTTON_EVT_DOUBLE_CLICK
-}
-
 
 //% block="Nerds"
 //% block.loc.ja="おたく" 
@@ -31,7 +15,7 @@ namespace nerds {
     //% block.loc.ja="ボタン $button が $action とき"
     //% weight=200
     //% subcategory="button"
-    export function onButton(button: Button, action: ButtonAction, handler: () => void) {
+    export function onButton(button: Button, action: TouchButtonEvent, handler: () => void) {
         control.onEvent(button, action, handler)
     }
 
