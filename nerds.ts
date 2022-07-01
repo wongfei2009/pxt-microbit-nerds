@@ -14,24 +14,8 @@ enum ButtonAction {
 //% block.loc.ja="おたく" 
 //% weight=10
 //% color=#4682b4
-//% icon="\uf1d8"
+//% icon="\uf164"
 namespace nerds {
-
-
-
-
-    // ----- Button
-
-    //% block="on button $button $action"
-    //% block.loc.ja="ボタン $button を $action とき"
-    //% weight=200
-    //% subcategory="button"
-    export function onButton(button: Button, action: ButtonAction, handler: () => void) {
-        control.onEvent(button, action, handler)
-    }
-
-
-
 
 
 
@@ -71,6 +55,25 @@ namespace nerds {
     export function customEventValue() {
         return control.eventValue()
     }
+
+
+
+
+
+    // ----- Button
+
+    //% block="on button $button $action"
+    //% block.loc.ja="ボタン $button を $action とき"
+    //% weight=200
+    //% subcategory="button"
+    export function onButton(button: Button, action: ButtonAction, handler: () => void) {
+        control.onEvent(button, action, handler)
+    }
+
+
+
+
+
 
 
 
