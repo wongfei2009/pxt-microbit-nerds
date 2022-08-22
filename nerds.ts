@@ -66,7 +66,7 @@ namespace nerds {
     //% weight=200
     //% subcategory="serial"
     //% group="i2c"
-        export function i2cReadNumber(address: number, format: NumberFormat, repeat: boolean) {
+    export function i2cReadNumber(address: number, format: NumberFormat, repeat: boolean) {
         return pins.i2cReadNumber(address, format, repeat)
     }
 
