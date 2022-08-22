@@ -64,15 +64,17 @@ namespace nerds {
     //% block="i2c read number at address $address of format $format repeated $repeat"
     //% block.loc.ja="i2c 値を読み込む アドレス$address フォーマット$format 繰り返し$repeat"
     //% weight=200
-    //% subcategory="i2c"
-    export function i2cReadNumber(address: number, format: NumberFormat, repeat: boolean) {
+    //% subcategory="serial"
+    //% group="i2c"
+        export function i2cReadNumber(address: number, format: NumberFormat, repeat: boolean) {
         return pins.i2cReadNumber(address, format, repeat)
     }
 
     //% block="i2c write number at address $address with value $value of format $format repeated $repeat"
     //% block.loc.ja="i2c 値を書き出す アドレス$address 値$value フォーマット$format 繰り返し$repeat"
     //% weight=100
-    //% subcategory="i2c"
+    //% subcategory="serial"
+    //% group="i2c"
     export function i2cWriteNumber(address: number, value: number, format: NumberFormat, repeat: boolean) {
         pins.i2cWriteNumber(address, value, format, repeat)
     }
@@ -84,7 +86,8 @@ namespace nerds {
     //% block="spi set pins MOSI$mosi MISO$miso SCK$sck"
     //% block.loc.ja="SPI 端子を決める MOSI$mosi MISO$miso SCK$sck"
     //% weight=200
-    //% subcategory="SPI"
+    //% subcategory="serial"
+    //% group="SPI"
     export function spiPins(mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin) {
         pins.spiPins(mosi, miso, sck)
     }
@@ -92,7 +95,8 @@ namespace nerds {
     //% block="spi format bits$bit mode$mode"
     //% block.loc.ja="SPI 形式を設定する ビット数$bit モード$mode"
     //% weight=190
-    //% subcategory="SPI"
+    //% subcategory="serial"
+    //% group="SPI"
     export function spiFormat(bit: number, mode: number) {
         pins.spiFormat(bit, mode)
     }
@@ -100,7 +104,8 @@ namespace nerds {
     //% block="spi frequency$f"
     //% block.loc.ja="SPI 周波数を設定する（Hz） $f"
     //% weight=180
-    //% subcategory="SPI"
+    //% subcategory="serial"
+    //% group="SPI"
     export function spiFrequency(f: number) {
         pins.spiFrequency(f)
     }
@@ -108,7 +113,8 @@ namespace nerds {
     //% block="spi write $value"
     //% block.loc.ja="SPI 書き出す $value"
     //% weight=170
-    //% subcategory="SPI"
+    //% subcategory="serial"
+    //% group="SPI"
     export function spiWrite(value: number) {
         return pins.spiWrite(value)
     }
