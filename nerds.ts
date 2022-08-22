@@ -79,8 +79,39 @@ namespace nerds {
 
 
 
+    // ----- SPI
 
+    //% block="spi set pins MOSI$mosi MISO$miso SCK$sck"
+    //% block.loc.ja="SPI 端子を決める MOSI$mosi MISO$miso SCK$sck"
+    //% weight=200
+    //% subcategory="SPI"
+    export function spiPins(mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin) {
+        pins.spiPins(mosi, miso, sck)
+    }
 
+    //% block="spi format bits$bit mode$mode"
+    //% block.loc.ja="SPI 形式を設定する ビット数$bit モード$mode"
+    //% weight=190
+    //% subcategory="SPI"
+    export function spiFormat(bit: number, mode: number) {
+        pins.spiFormat(bit, mode)
+    }
+
+    //% block="spi frequency$f"
+    //% block.loc.ja="SPI 周波数を設定する（Hz） $f"
+    //% weight=180
+    //% subcategory="SPI"
+    export function spiFrequency(f: number) {
+        pins.spiFrequency(f)
+    }
+
+    //% block="spi write $value"
+    //% block.loc.ja="SPI 書き出す $value"
+    //% weight=170
+    //% subcategory="SPI"
+    export function spiWrite(value: number) {
+        return pins.spiWrite(value)
+    }
 
 
 
