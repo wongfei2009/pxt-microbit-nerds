@@ -59,6 +59,23 @@ namespace nerds {
     }
 
 
+    // ----- i2c
+
+    //% block="i2c read number at address $address of format $format repeated $repeat"
+    //% block.loc.ja="i2c 値を読み込む アドレス$address フォーマット$format 繰り返し$repeat"
+    //% weight=200
+    //% subcategory="i2c"
+    export function i2cReadNumber(address: number, format: NumberFormat, repeat: boolean) {
+        return pins.i2cReadNumber(address, format, repeat)
+    }
+
+    //% block="i2c write number at address $address with value $value of format $format repeated $repeat"
+    //% block.loc.ja="i2c 値を書き出す アドレス$address 値$value フォーマット$format 繰り返し$repeat"
+    //% weight=100
+    //% subcategory="i2c"
+    export function i2cWriteNumber(address: number, value: number, format: NumberFormat, repeat: boolean) {
+        pins.i2cWriteNumber(address, value, format, repeat)
+    }
 
 
 
