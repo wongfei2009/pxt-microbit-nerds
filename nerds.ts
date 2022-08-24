@@ -68,7 +68,7 @@ namespace nerds {
     }
 
     //% block="i2c write number at address $address with value $value of format $format repeated $repeat"
-    //% block.loc.ja="I2C 値を書き出す アドレス$address 値$value フォーマット$format 繰り返し$repeat"
+    //% block.loc.ja="I2C 値を書き出す | アドレス$address 値$value フォーマット$format 繰り返し$repeat"
     //% weight=100
     //% subcategory="serial"
     //% group="I2C"
