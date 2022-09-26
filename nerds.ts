@@ -119,4 +119,20 @@ namespace nerds {
 
 
 
+
+
+    // ----- Melody
+
+    //% block="play custom melody %melodyArray | repeating %options"
+    //% block.loc.ja="カスタム・メロディを鳴らす %melodyArray | 繰り返し %options"
+    //% weight=200
+    //% subcategory="melody"
+    //% group=""
+    export function playCustomMelody(melodyArray: string[], options: MelodyOptions = 1) {
+
+    }
+
+
+
+
 }
