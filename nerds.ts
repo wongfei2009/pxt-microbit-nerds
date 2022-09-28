@@ -129,7 +129,7 @@ namespace nerds {
     //% subcategory="melody"
     //% group=""
     export function playCustomMelody(melodyArray: string[], options: MelodyOptions = 1) {
-
+        music.startMelody(melodyArray, options)
     }
 
     //% block="make custom melody from string %stringMelody"
@@ -142,8 +142,8 @@ namespace nerds {
 
         let octave = 4
         let duration = 4
-        let currentOctave = -1
-        let currentDuration = -1
+        let currentOctave = octave
+        let currentDuration = duration
 
 
         let melody: string[] = []
@@ -159,7 +159,7 @@ namespace nerds {
             out += note[index]
             index++
 
-            if (note[index] == "#" || note[index] == "b") {
+            if (note[index] == "#") {
                 out += note[index]
                 index++
             }
@@ -179,15 +179,21 @@ namespace nerds {
                 }
                 else {
                     octave = parseInt(args)
+
+                    
                     if (Number.isNaN(octave)) octave = currentOctave
                     duration = currentDuration
                 }
             }
 
-            out += String.fromCharCode(octave) + ":" + String.fromCharCode(duration)
+            out += octave + ":" + duration
 
-            if (octave != currentOctave) currentOctave = octave
-            if (duration != currentDuration) currentDuration = duration
+            basic.showString(out)
+
+            if (currentOctave   != octave  ) currentOctave = octave
+            if (currentDuration != duration) currentDuration = duration
+
+            
 
             melody.push(out);
         }
