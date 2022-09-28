@@ -188,7 +188,7 @@ namespace nerds {
 
             out += octave + ":" + duration
 
-            basic.showString(out)
+            // basic.showString(out)
 
             if (currentOctave   != octave  ) currentOctave = octave
             if (currentDuration != duration) currentDuration = duration
