@@ -1,6 +1,6 @@
 
 //% block="Nerds"
-//% block.loc.ja="おたく" 
+//% block.loc.ja="おたく"
 //% weight=10
 //% color=#696969
 //% icon="\uf164"
@@ -132,7 +132,68 @@ namespace nerds {
 
     }
 
+    //% block="make custom melody from string %stringMelody"
+    //% block.loc.ja="文字列からカスタム・メロディを作る %stringMelody"
+    //% weight=210
+    //% subcategory="melody"
+    //% group=""
+    export function stringToMelody(stringMelody: string) {
+        if (stringMelody.length <= 0) return []
 
+        let octave = 4
+        let duration = 4
+        let currentOctave = -1
+        let currentDuration = -1
+
+
+        let melody: string[] = []
+
+        let cmd = stringMelody.toLowerCase().split(",")
+        for (let i = 0; i < cmd.length; i++) {
+            let note = cmd[i]
+            let index = 0
+            let out = ""
+
+            if (!(note[index] >= "a" && note[index] <= "g" || note[index] == "r")) continue
+
+            out += note[index]
+            index++
+
+            if (note[index] == "#" || note[index] == "b") {
+                out += note[index]
+                index++
+            }
+
+            let args = note.substr(index, note.length - index)
+            if (args.length <= 0) {
+                octave = currentOctave
+                duration = currentDuration
+            }
+            else {
+                if (args.includes(":")) {
+                    let arg = args.split(":")
+                    octave = parseInt(arg[0])
+                    if (Number.isNaN(octave)) octave = currentOctave
+                    duration = parseInt(arg[1])
+                    if (Number.isNaN(duration)) duration = currentDuration
+                }
+                else {
+                    octave = parseInt(args)
+                    if (Number.isNaN(octave)) octave = currentOctave
+                    duration = currentDuration
+                }
+            }
+
+            out += String.fromCharCode(octave) + ":" + String.fromCharCode(duration)
+
+            if (octave != currentOctave) currentOctave = octave
+            if (duration != currentDuration) currentDuration = duration
+
+            melody.push(out);
+        }
+
+        return melody
+    }
 
 
 }
