@@ -1,8 +1,10 @@
 // テストはここに来ます。このパッケージが拡張機能として使用されるときにはコンパイルされません。
 input.onButtonPressed(Button.A, function () {
+    // music.setTempo(120)
     nerds.playCustomMelody(haruichiban, MelodyOptions.Once)
 })
 input.onButtonPressed(Button.B, function () {
+    music.setTempo(240)
     nerds.playCustomMelody(kirakiraboshi, MelodyOptions.Once)
 })
 let haruichiban: string[] = []
