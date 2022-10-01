@@ -1,5 +1,5 @@
 
-enum JNote {
+enum NNote {
     //% block="C4"
     //% block.loc.ja="ド"
     c4,
@@ -252,6 +252,7 @@ namespace nerds {
     //% weight=210
     //% subcategory="melody"
     //% group=""
+    //% stringMelody.defl="C4:4,D4:4,E4:4"
     export function stringToMelody(stringMelody: string) {
         if (stringMelody.length <= 0) return []
 
@@ -316,15 +317,16 @@ namespace nerds {
         return melody
     }
 
-    //% block="%jnote"
-    //% block.loc.ja="%jnote"
+    //% block="$note : $length"
+    //% block.loc.ja="$note : $length"
     //% weight=220
     //% subcategory="melody"
     //% group=""
-    //% jnote.fieldEditor="gridpicker"
-    //% jnote.fieldOptions.width=220
-    //% jnote.fieldOptions.columns=12
-    export function getMelodyString(jnote: JNote) {
+    //% note.fieldEditor="gridpicker"
+    //% note.fieldOptions.width=220
+    //% note.fieldOptions.columns=12
+    //% length.defl=4
+    export function getMelodyString(note: NNote, length: number) {
         return "s"
     }
 }
