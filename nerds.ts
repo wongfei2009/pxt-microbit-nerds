@@ -238,23 +238,23 @@ namespace nerds {
 
     // ----- Melody
 
-    //% block="play melody array $melodyArray | repeating $options"
-    //% block.loc.ja="メロディ配列を鳴らす $melodyArray | 繰り返し $options"
+    //% block="play note array $noteArray | repeating $options"
+    //% block.loc.ja="音符配列を鳴らす $noteArray | 繰り返し $options"
     //% weight=200
     //% subcategory="melody"
     //% group=""
-    export function playMelodyArray(melodyArray: string[], options: MelodyOptions) {
-        music.startMelody(melodyArray, options)
+    export function playNoteArray(noteArray: string[], options: MelodyOptions) {
+        music.startMelody(noteArray, options)
     }
 
-    //% block="make melody array from string $stringMelody"
-    //% block.loc.ja="文字列からメロディ配列を作る $stringMelody"
+    //% block="make note array from string $notesString"
+    //% block.loc.ja="文字列から音符配列を作る $notesString"
     //% weight=210
     //% subcategory="melody"
     //% group=""
-    //% stringMelody.defl="C4:4,D4:4,E4:4"
-    export function stringToMelodyArray(stringMelody: string) {
-        if (stringMelody.length <= 0) return []
+    //% notesString.defl="C4:4,D4:4,E4:4"
+    export function stringToNoteArray(notesString: string) {
+        if (notesString.length <= 0) return []
 
         let octave = 4
         let duration = 4
@@ -264,7 +264,7 @@ namespace nerds {
 
         let melody: string[] = []
 
-        let cmd = stringMelody.toLowerCase().split(",")
+        let cmd = notesString.toLowerCase().split(",")
         for (let i = 0; i < cmd.length; i++) {
             let note = cmd[i]
             let index = 0
@@ -316,18 +316,6 @@ namespace nerds {
 
         return melody
     }
-
-    //% block="make melody array from notes $notes"
-    //% block.loc.ja="音符からメロディ配列を作る $notes"
-    //% weight=210
-    //% subcategory="melody"
-    //% group=""
-    //% stringMelody.defl="C4:4,D4:4,E4:4"
-    export function notesToMelodyArray(notes: string[]) {
-        return notes
-    }
-
-
 
     //% block="$note : $duration"
     //% block.loc.ja="$note : $duration"
