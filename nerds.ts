@@ -238,22 +238,22 @@ namespace nerds {
 
     // ----- Melody
 
-    //% block="play custom melody %melodyArray | repeating %options"
-    //% block.loc.ja="カスタム・メロディを鳴らす %melodyArray | 繰り返し %options"
+    //% block="play melody array $melodyArray | repeating $options"
+    //% block.loc.ja="メロディ配列を鳴らす $melodyArray | 繰り返し $options"
     //% weight=200
     //% subcategory="melody"
     //% group=""
-    export function playCustomMelody(melodyArray: string[], options: MelodyOptions = 1) {
+    export function playMelodyArray(melodyArray: string[], options: MelodyOptions) {
         music.startMelody(melodyArray, options)
     }
 
-    //% block="make custom melody from string %stringMelody"
-    //% block.loc.ja="文字列からカスタム・メロディを作る %stringMelody"
+    //% block="make melody array from string $stringMelody"
+    //% block.loc.ja="文字列からメロディ配列を作る $stringMelody"
     //% weight=210
     //% subcategory="melody"
     //% group=""
     //% stringMelody.defl="C4:4,D4:4,E4:4"
-    export function stringToMelody(stringMelody: string) {
+    export function stringToMelodyArray(stringMelody: string) {
         if (stringMelody.length <= 0) return []
 
         let octave = 4
@@ -296,7 +296,7 @@ namespace nerds {
                 else {
                     octave = parseInt(args)
 
-                    
+
                     if (Number.isNaN(octave)) octave = currentOctave
                     duration = currentDuration
                 }
@@ -306,10 +306,10 @@ namespace nerds {
 
             // basic.showString(out)
 
-            if (currentOctave   != octave  ) currentOctave = octave
+            if (currentOctave != octave) currentOctave = octave
             if (currentDuration != duration) currentDuration = duration
 
-            
+
 
             melody.push(out);
         }
@@ -317,16 +317,82 @@ namespace nerds {
         return melody
     }
 
-    //% block="$note : $length"
-    //% block.loc.ja="$note : $length"
-    //% weight=220
+    //% block="make melody array from notes $notes"
+    //% block.loc.ja="音符からメロディ配列を作る $notes"
+    //% weight=210
     //% subcategory="melody"
     //% group=""
+    //% stringMelody.defl="C4:4,D4:4,E4:4"
+    export function notesToMelodyArray(notes: string[]) {
+        return notes
+    }
+
+
+
+    //% block="$note : $duration"
+    //% block.loc.ja="$note : $duration"
     //% note.fieldEditor="gridpicker"
     //% note.fieldOptions.width=220
     //% note.fieldOptions.columns=12
-    //% length.defl=4
-    export function getMelodyString(note: NNote, length: number) {
-        return "s"
+    //% duration.defl=4
+    //% duration.min=1
+    //% duration.max=32
+    //% weight=250
+    //% subcategory="melody"
+    //% group=""
+    export function getNoteCode(note: NNote, duration: number) {
+        let code = ""
+        switch (note) {
+            case NNote.c4: code = "c4"; break
+            case NNote.cs4: code = "c#4"; break
+            case NNote.d4: code = "d4"; break
+            case NNote.ds4: code = "d#4"; break
+            case NNote.e4: code = "e4"; break
+            case NNote.f4: code = "f4"; break
+            case NNote.fs4: code = "f#4"; break
+            case NNote.g4: code = "g4"; break
+            case NNote.gs4: code = "g#4"; break
+            case NNote.a4: code = "a4"; break
+            case NNote.as4: code = "a#4"; break
+            case NNote.b4: code = "b4"; break
+            case NNote.c3: code = "c3"; break
+            case NNote.cs3: code = "c#3"; break
+            case NNote.d3: code = "d3"; break
+            case NNote.ds3: code = "d#3"; break
+            case NNote.e3: code = "e3"; break
+            case NNote.f3: code = "f3"; break
+            case NNote.fs3: code = "f#3"; break
+            case NNote.g3: code = "g3"; break
+            case NNote.gs3: code = "g#3"; break
+            case NNote.a3: code = "a3"; break
+            case NNote.as3: code = "a#3"; break
+            case NNote.b3: code = "b3"; break
+            case NNote.c5: code = "c5"; break
+            case NNote.cs5: code = "c#5"; break
+            case NNote.d5: code = "d5"; break
+            case NNote.ds5: code = "d#5"; break
+            case NNote.e5: code = "e5"; break
+            case NNote.f5: code = "f5"; break
+            case NNote.fs5: code = "f#5"; break
+            case NNote.g5: code = "g5"; break
+            case NNote.gs5: code = "g#5"; break
+            case NNote.a5: code = "a5"; break
+            case NNote.as5: code = "a#5"; break
+            case NNote.b5: code = "b5"; break
+            default:
+        }
+        return code + ":" + duration
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
