@@ -8,7 +8,7 @@ input.onButtonPressed(Button.B, function () {
     nerds.playNoteArray(kirakiraboshi, MelodyOptions.Once)
 })
 input.onButtonPressed(Button.AB, function () {
-    music.setTempo(180)
+    music.setTempo(240)
     nerds.playNoteArray(kirakiraboshi2, MelodyOptions.Once)
 })
 let haruichiban: string[] = []
@@ -17,17 +17,17 @@ haruichiban = nerds.stringToNoteArray(
     "g4:1,r:1,g4:1,r:1,g4:1,r:1,g4:1,r:1,g4:1,r:1,e4:2,c4:2,d4:2")
 let kirakiraboshi: string[] = []
 kirakiraboshi = nerds.stringToNoteArray(
-    "c4:4,c4:4,g4:4,g4:4,a4:4,a4:4,g4:4,r:4," +
-    "f4:4,f4:4,e4:4,e4:4,d4:4,d4:4,c4:4,r:4," +
-    "g4:4,g4:4,f4:4,f4:4,e4:4,e4:4,d4:4,r:4," +
-    "g4:4,g4:4,f4:4,f4:4,e4:4,e4:4,d4:4,r:4," +
-    "c4:4,c4:4,g4:4,g4:4,a4:4,a4:4,g4:4,r:4," +
-    "f4:4,f4:4,e4:4,e4:4,d4:4,d4:4,c4:4")
+    "c4:3,r:1,c4:3,r:1,g4:3,r:1,g4:3,r:1,a4:3,r:1,a4:3,r:1,g4:3,r:1,r:3,r:1," +
+    "f4:3,r:1,f4:3,r:1,e4:3,r:1,e4:3,r:1,d4:3,r:1,d4:3,r:1,c4:3,r:1,r:3,r:1," +
+    "g4:3,r:1,g4:3,r:1,f4:3,r:1,f4:3,r:1,e4:3,r:1,e4:3,r:1,d4:3,r:1,r:3,r:1," +
+    "g4:3,r:1,g4:3,r:1,f4:3,r:1,f4:3,r:1,e4:3,r:1,e4:3,r:1,d4:3,r:1,r:3,r:1," +
+    "c4:3,r:1,c4:3,r:1,g4:3,r:1,g4:3,r:1,a4:3,r:1,a4:3,r:1,g4:3,r:1,r:3,r:1," +
+    "f4:3,r:1,f4:3,r:1,e4:3,r:1,e4:3,r:1,d4:3,r:1,d4:3,r:1,c4:3,r:1")
 let kirakiraboshi2: string[] = []
 kirakiraboshi2 = nerds.stringToNoteArray(
-    "g4:4,g4:4,d5:4,d5:4,e5:4,e5:4,d5:4,r:4," +
-    "c5:4,c5:4,b4:4,b4:4,a4:4,a4:4,g4:4,r:4," +
-    "d5:4,d5:4,c5:4,c5:4,b4:4,b4:4,a4:4,r:4," +
-    "d5:4,d5:4,c5:4,c5:4,b4:4,b4:4,a4:4,r:4," +
-    "g4:4,g4:4,d5:4,d5:4,e5:4,e5:4,d5:4,r:4," +
-    "c5:4,c5:4,b4:4,b4:4,a4:4,a4:4,g4:4")
+    "g4:3,r:1,g4:3,r:1,d5:3,r:1,d5:3,r:1,e5:3,r:1,e5:3,r:1,d5:3,r:1,r:3,r:1," +
+    "c5:3,r:1,c5:3,r:1,b4:3,r:1,b4:3,r:1,a4:3,r:1,a4:3,r:1,g4:3,r:1,r:3,r:1," +
+    "d5:3,r:1,d5:3,r:1,c5:3,r:1,c5:3,r:1,b4:3,r:1,b4:3,r:1,a4:3,r:1,r:3,r:1," +
+    "d5:3,r:1,d5:3,r:1,c5:3,r:1,c5:3,r:1,b4:3,r:1,b4:3,r:1,a4:3,r:1,r:3,r:1," +
+    "g4:3,r:1,g4:3,r:1,d5:3,r:1,d5:3,r:1,e5:3,r:1,e5:3,r:1,d5:3,r:1,r:3,r:1," +
+    "c5:3,r:1,c5:3,r:1,b4:3,r:1,b4:3,r:1,a4:3,r:1,a4:3,r:1,g4:3,r:1")
